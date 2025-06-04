@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="recover.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="purple-bg">
+        <h1>Recover Your Password</h1>
+
+        <p>Try to rememmber your Password next time</p>
+
+        <a href="SignIn.html">SIGN IN</a>
+      </div>
+      <form>
+        <p>Enter Your Email</p>
+        <div id="signUpStatus"></div>
+        <input type="email" id="recoverEmail" required placeholder="Email" />
+        <button type="submit" class="send-email">Send Email</button>
+        <span id="cooldownText"></span>
+      </form>
+    </div>
+    <script src="recover.js"></script>
+  </body>
+</html>

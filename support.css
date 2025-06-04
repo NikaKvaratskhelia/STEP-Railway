@@ -1,0 +1,218 @@
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+#alertDiv {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background-color: green;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+  z-index: 999;
+}
+.support-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+main {
+  margin-top: 150px;
+}
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: #e0f0ff;
+  border-radius: 12px;
+}
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.hero-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.topics {
+  margin: 40px 0;
+}
+.topics h2 {
+  font-size: 1.5em;
+}
+.topic-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+.card {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.faq-search input {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.faq-list h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+.faq-category h3 {
+  margin-top: 30px;
+  font-size: 1.3em;
+}
+.faq-item {
+  background: #fff;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px 8px 0px 0px;
+  cursor: pointer;
+}
+.faq-answer {
+  display: none;
+  padding: 10px;
+  background: #f0f0f0;
+  margin: -10px 0 10px 0;
+  border-radius: 0 0 8px 8px;
+}
+.faq-answer.show {
+  display: block;
+}
+.contact-support {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 50px;
+}
+.contact-support .left-form,
+.contact-support .right-info {
+  flex: 1;
+  min-width: 250px;
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.contact-form button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+.chatbot-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 50%;
+  background: #007bff;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dark Theme */
+
+body.dark-theme {
+  background: #121212;
+  color: #e0e0e0;
+}
+body.dark-theme .support-page {
+  background: transparent;
+}
+body.dark-theme .hero {
+  background: #1f2937;
+  color: #f0f0f0;
+}
+body.dark-theme .hero-buttons button {
+  background-color: #2563eb;
+  color: #f0f0f0;
+  border: none;
+}
+body.dark-theme .hero-buttons button:hover {
+  background-color: #1d4ed8;
+}
+body.dark-theme .topics h2,
+body.dark-theme .faq-list h2,
+body.dark-theme .faq-category h3,
+body.dark-theme .contact-support h2 {
+  color: #f0f0f0;
+}
+body.dark-theme .topic-cards .card {
+  background: #1f2937;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+  color: #e0e0e0;
+}
+body.dark-theme .faq-search input {
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  color: #e0e0e0;
+}
+body.dark-theme .faq-item {
+  background: #1f2937;
+  color: #e0e0e0;
+}
+body.dark-theme .faq-answer {
+  background: #2d3748;
+  color: #cbd5e1;
+}
+body.dark-theme .contact-support {
+  gap: 40px;
+}
+body.dark-theme .contact-support .left-form,
+body.dark-theme .contact-support .right-info {
+  background: #1f2937;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 12px;
+}
+body.dark-theme .contact-form input,
+body.dark-theme .contact-form textarea {
+  background: #2d3748;
+  border: 1px solid #4a5568;
+  color: #e0e0e0;
+}
+body.dark-theme .contact-form button {
+  background-color: #2563eb;
+  color: #f0f0f0;
+}
+body.dark-theme .contact-form button:hover {
+  background-color: #1d4ed8;
+}
+body.dark-theme .chatbot-btn {
+  background: #2563eb;
+  color: #f0f0f0;
+}

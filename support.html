@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support</title>
+    <link rel="icon" href="Images/Icon.png" />
+    <link rel="stylesheet" href="support.css" />
+    <link rel="stylesheet" href="HeaderFooter.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-info">
+        <div class="icons">
+          <a href="index.html">
+            <img
+              class="desktop-icon"
+              src="Images/Header Icon.png"
+              alt="Step Railway icon text"
+            />
+          </a>
+
+          <a href="index.html">
+            <img
+              class="responsive-icon"
+              src="Images/Icon.png"
+              alt="Step Railway icon responsive"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            href="checkTicket.html"
+            class="check-ticket__button"
+            data-translate="ბილეთის შემოწმება/დაბრუნება"
+          >
+            ბილეთის შემოწმება/დაბრუნება
+          </a>
+
+          <div class="burger-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <div class="burger-menu-list">
+            <div class="closeBtn">&times;</div>
+
+            <a
+              href="checkTicket.html"
+              class="check-ticket__button"
+              data-translate="ბილეთის შემოწმება/დაბრუნება"
+            >
+              ბილეთის შემოწმება/დაბრუნება
+            </a>
+
+            <a href="userProfile.html" id="userProfileHref" class="userPfp">
+              <img id="userProfileIcon" src="" alt="Pfp" />
+              <p data-translate="პროფილი" id="pfpInfo">პროფილი</p></a
+            >
+
+            <a href="chatBot.html" class="chatBot" data-translate="ბოტი"
+              >ბოტი</a
+            >
+            <a href="history.html" data-translate="ბილეთების ისტორია"
+              >ბილეთების ისტორია</a
+            >
+            <a href="support.html" class="chatBot" data-translate="დახმარება"
+              >დახმარება</a
+            >
+            <button class="dark-btn">
+              <img src="Images/dark.png" alt="dark theme" />
+
+              <p data-translate="ღამის რეჟიმი">ღამის რეჟიმი</p>
+            </button>
+            <select name="translate" id="lang">
+              <option value="ka">ქართული</option>
+              <option value="en">English</option>
+            </select>
+
+            <button class="logOut" id="logOut">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width="20"
+                height="20"
+              >
+                <path
+                  fill="#ffffff"
+                  d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"
+                />
+              </svg>
+
+              <p data-translate="გამოსვლა">გასვლა</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="support-page">
+        <section class="hero">
+          <h1>How can we help you?</h1>
+          <p>Find answers, troubleshoot, or reach out to us directly.</p>
+          <div class="hero-buttons">
+            <button
+              onclick="document.querySelector('.faq-search input').focus()"
+            >
+              Browse FAQs
+            </button>
+            <button
+              onclick="document.querySelector('.contact-support').scrollIntoView({behavior: 'smooth'})"
+            >
+              Contact Support
+            </button>
+          </div>
+        </section>
+
+        <section class="topics">
+          <h2>Popular Topics</h2>
+          <div class="topic-cards">
+            <div class="card" onclick="scrollToCategory('Tickets')">
+              🎫 Ticket Issues
+            </div>
+            <div class="card" onclick="scrollToCategory('Accounts')">
+              👤 Account & Login
+            </div>
+            <div class="card" onclick="scrollToCategory('Payments')">
+              💳 Payments & Refunds
+            </div>
+          </div>
+        </section>
+
+        <section class="faq-search">
+          <input
+            type="text"
+            placeholder="Search FAQs..."
+            oninput="filterFAQs(this.value)"
+          />
+        </section>
+
+        <section class="faq-list">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-category" id="Tickets">
+            <h3>Tickets</h3>
+            <div class="faq-item">How do I download my train ticket?</div>
+            <div class="faq-answer">
+              You can download your ticket from the email confirmation or your
+              account's ticket history.
+            </div>
+
+            <div class="faq-item">Can I cancel a ticket after purchase?</div>
+            <div class="faq-answer">
+              Yes, cancellations are possible up to 24 hours before departure
+              via your account dashboard.
+            </div>
+
+            <div class="faq-item">
+              I didn't receive a confirmation email. What should I do?
+            </div>
+            <div class="faq-answer">
+              Please check your spam folder, or contact our support with your
+              booking ID.
+            </div>
+          </div>
+
+          <div class="faq-category" id="Accounts">
+            <h3>Accounts</h3>
+            <div class="faq-item">How do I reset my password?</div>
+            <div class="faq-answer">
+              Go to the login page and click "Forgot Password" to receive a
+              reset link.
+            </div>
+
+            <div class="faq-item">
+              How can I update my personal information?
+            </div>
+            <div class="faq-answer">
+              You can update your profile details in your account settings.
+            </div>
+
+            <div class="faq-item">Why is my account locked?</div>
+            <div class="faq-answer">
+              Accounts are locked after multiple failed login attempts. Contact
+              support to unlock it.
+            </div>
+          </div>
+
+          <div class="faq-category" id="Payments">
+            <h3>Payments</h3>
+            <div class="faq-item">Which payment methods do you accept?</div>
+            <div class="faq-answer">
+              We accept credit cards, PayPal, and selected mobile payments.
+            </div>
+
+            <div class="faq-item">
+              I was charged twice. How do I get a refund?
+            </div>
+            <div class="faq-answer">
+              Contact support with your order ID and both charge references for
+              quick assistance.
+            </div>
+
+            <div class="faq-item">
+              Is online payment secure on your website?
+            </div>
+            <div class="faq-answer">
+              Yes, we use encrypted payment gateways to ensure your data is
+              safe.
+            </div>
+          </div>
+        </section>
+
+        <section class="contact-support">
+          <div class="left-form">
+            <h2>Send Us a Message</h2>
+            <form class="contact-form">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required />
+
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+              ></textarea>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+          <div class="right-info">
+            <h2>Contact Details</h2>
+            <p><strong>Email:</strong> support@railbooker.com</p>
+            <p><strong>Phone:</strong> +1 (800) 123-4567</p>
+            <p><strong>Hours:</strong> Mon-Fri, 9:00 AM - 6:00 PM</p>
+            <p><strong>Location:</strong> 123 Railway Ave, Train City</p>
+            <img
+              src="Images/Screenshot 2025-06-01 203212.png"
+              alt="Map Location"
+              style="width: 100%; border-radius: 12px; margin-top: 10px"
+            />
+          </div>
+        </section>
+
+        <button
+          class="chatbot-btn"
+          onclick="window.location.href = 'chatBot.html'"
+        >
+          💬
+        </button>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-txt-div">
+        <p>
+          © 2023
+          <a href="https://railway.stepprojects.ge/" target="_blank"
+            >Step Railway</a
+          >.
+          <span data-translate="ყველა უფლება დაცულია."
+            >ყველა უფლება დაცულია.</span
+          >
+        </p>
+      </div>
+    </footer>
+
+    <div id="alertDiv"></div>
+
+    <script src="support.js"></script>
+    <script src="translations.js"></script>
+  </body>
+</html>

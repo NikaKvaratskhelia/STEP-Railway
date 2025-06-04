@@ -1,0 +1,660 @@
+.container {
+  margin: auto;
+  margin-top: 250px;
+  max-width: 1300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  box-shadow: 0px 6px 30px rgba(0, 0, 0, 0.08);
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    transform: skewX(20deg);
+    width: 100%;
+    border: 1px solid #ebebeb;
+    li {
+      padding: 7px 40px;
+      border: 1px solid #ebebeb;
+      &:last-child {
+        background-color: #273db1;
+        color: white;
+      }
+    }
+  }
+
+  .payment-status {
+    width: fit-content;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    .svg-wrapper {
+      width: 70px;
+      height: 70px;
+      background-color: #008f20;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      font-size: 30px;
+      font-weight: 600;
+    }
+  }
+
+  .ticket-wrapper {
+    max-width: 1100px;
+    width: 100%;
+    background-color: rgba(39, 61, 177, 0.03);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px;
+
+    .ticket-info {
+      max-width: 900px;
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      padding: 20px;
+
+      .company-name {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          font-weight: 600;
+        }
+
+        img {
+          width: 70px;
+        }
+      }
+
+      .ticket-id-date {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        p span {
+          font-weight: 600;
+        }
+      }
+
+      .train-info {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        border: #ebebeb 1px solid;
+        border-radius: 10px;
+        padding: 10px 20px;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        > p {
+          font-weight: 600;
+        }
+
+        div {
+          border: 1px solid #ebebeb;
+          border-radius: 10px;
+          padding: 10px;
+          display: flex;
+          flex-wrap: wrap;
+
+          p {
+            flex-grow: 1;
+            overflow-wrap: anywhere;
+            span {
+              font-weight: 600;
+            }
+          }
+        }
+      }
+
+      .passengers-div {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        > p {
+          font-weight: 600;
+        }
+
+        .passengers-info {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          .pass-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            border: 1px solid #ebebeb;
+            padding: 10px;
+            border-radius: 10px;
+
+            div {
+              display: flex;
+              gap: 5px;
+              min-width: fit-content;
+
+              p:nth-child(1) {
+                font-weight: 600;
+              }
+            }
+          }
+        }
+      }
+
+      .payment-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+
+        .card-info {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          div {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            p:first-child {
+              font-weight: 600;
+            }
+          }
+        }
+
+        .total {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          border-top: 1px solid black;
+          max-width: 300px;
+          width: 100%;
+
+          p:first-child {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .invoice-copyright {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+
+        p {
+          font-weight: 600;
+
+          &:nth-child(2) {
+            color: red;
+          }
+        }
+      }
+    }
+
+    .print-donwload {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+      background-color: #fff;
+      width: fit-content;
+      height: fit-content;
+      position: relative;
+
+      div {
+        padding: 5px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          &::before {
+            display: block;
+          }
+        }
+      }
+
+      .print {
+        background-color: #007bff61;
+        &::before {
+          content: attr(name);
+          color: #fff;
+          display: none;
+          position: absolute;
+          top: -30px;
+          background-color: #007bff61;
+          padding: 5px;
+          border-radius: 4px;
+        }
+      }
+
+      .download {
+        background-color: #34c75961;
+        &::before {
+          content: attr(name);
+          color: #fff;
+          display: none;
+          position: absolute;
+          bottom: -30px;
+          background-color: #34c75961;
+          padding: 5px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .container {
+    .ticket-wrapper {
+      flex-direction: column-reverse;
+      gap: 20px;
+
+      .ticket-info {
+        max-width: 100%;
+      }
+
+      .print-donwload {
+        flex-direction: row;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    padding: 0px;
+
+    ul {
+      transform: skewX(0deg);
+      border: none;
+    }
+    .ticket-wrapper {
+      max-width: 100%;
+    }
+
+    .pass-container {
+      flex-direction: column;
+    }
+  }
+}
+
+// Dark Theme
+
+body.dark-theme {
+  .container {
+    margin: auto;
+    margin-top: 250px;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.6);
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      transform: skewX(20deg);
+      width: 100%;
+      border: 1px solid #444;
+
+      li {
+        padding: 7px 40px;
+        border: 1px solid #444;
+        color: #ccc;
+
+        &:last-child {
+          background-color: #1a2a7c;
+          color: #eee;
+        }
+      }
+    }
+
+    .payment-status {
+      width: fit-content;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+
+      .svg-wrapper {
+        width: 70px;
+        height: 70px;
+        background-color: #006e16;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      p {
+        font-size: 30px;
+        font-weight: 600;
+        color: #ddd;
+      }
+    }
+
+    .ticket-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      background-color: rgba(39, 61, 177, 0.1);
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 30px;
+
+      .ticket-info {
+        max-width: 900px;
+        width: 100%;
+        background-color: #222532;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+        color: #ddd;
+
+        .company-name {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          p {
+            font-weight: 600;
+            color: #eee;
+          }
+
+          img {
+            filter: brightness(1) invert(0.8);
+            width: 70px;
+          }
+        }
+
+        .ticket-id-date {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+
+          p span {
+            font-weight: 600;
+            color: #eee;
+          }
+        }
+
+        .train-info {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          border: 1px solid #444;
+          border-radius: 10px;
+          padding: 10px 20px;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: #ccc;
+          }
+        }
+
+        .contact-info {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+
+          > p {
+            font-weight: 600;
+            color: #eee;
+          }
+
+          div {
+            border: 1px solid #444;
+            border-radius: 10px;
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+
+            p {
+              flex-grow: 1;
+              overflow-wrap: anywhere;
+              color: #ccc;
+
+              span {
+                font-weight: 600;
+                color: #eee;
+              }
+            }
+          }
+        }
+
+        .passengers-div {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          > p {
+            font-weight: 600;
+            color: #eee;
+          }
+
+          .passengers-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .pass-container {
+              display: flex;
+              justify-content: space-between;
+              flex-wrap: wrap;
+              gap: 10px;
+              border: 1px solid #444;
+              padding: 10px;
+              border-radius: 10px;
+
+              div {
+                display: flex;
+                gap: 5px;
+                min-width: fit-content;
+                color: #ccc;
+
+                p:nth-child(1) {
+                  font-weight: 600;
+                  color: #eee;
+                }
+              }
+            }
+          }
+        }
+
+        .payment-info {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+
+          .card-info {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            div {
+              display: flex;
+              flex-direction: column;
+              gap: 5px;
+
+              p:first-child {
+                font-weight: 600;
+                color: #eee;
+              }
+            }
+          }
+
+          .total {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-top: 1px solid #eee;
+            max-width: 300px;
+            width: 100%;
+
+            p:first-child {
+              font-weight: 600;
+              color: #eee;
+            }
+          }
+        }
+
+        .invoice-copyright {
+          margin-top: 50px;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+
+          p {
+            font-weight: 600;
+            color: #ccc;
+
+            &:nth-child(2) {
+              color: #ff6666;
+            }
+          }
+        }
+      }
+
+      .print-donwload {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        background-color: #222532;
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+        color: #ddd;
+
+        div {
+          padding: 5px;
+          border-radius: 4px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+
+          &:hover {
+            &::before {
+              display: block;
+            }
+          }
+        }
+
+        .print {
+          background-color: #0056b3a1;
+
+          &::before {
+            content: attr(name);
+            color: #fff;
+            display: none;
+            position: absolute;
+            top: -30px;
+            background-color: #0056b3a1;
+            padding: 5px;
+            border-radius: 4px;
+          }
+        }
+
+        .download {
+          background-color: #228b22a1;
+
+          &::before {
+            content: attr(name);
+            color: #fff;
+            display: none;
+            position: absolute;
+            bottom: -30px;
+            background-color: #228b22a1;
+            padding: 5px;
+            border-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 710px) {
+    .container {
+      .ticket-wrapper {
+        flex-direction: column-reverse;
+        gap: 20px;
+
+        .ticket-info {
+          max-width: 100%;
+        }
+
+        .print-donwload {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 550px) {
+    .container {
+      padding: 0;
+
+      ul {
+        transform: skewX(0deg);
+        border: none;
+      }
+
+      .ticket-wrapper {
+        max-width: 100%;
+      }
+
+      .pass-container {
+        flex-direction: column;
+      }
+    }
+  }
+}

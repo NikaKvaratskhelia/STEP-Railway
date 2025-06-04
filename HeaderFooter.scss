@@ -1,0 +1,426 @@
+$--text: #3f3f3f;
+$--button-bg: #2841bf;
+$--button-bg__trans: #2841bf00;
+$--linear-one: #d5e4f5;
+$--linear-two: #ffffff;
+$--white: #ffffff;
+$--second-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: main-font;
+}
+
+body,
+html {
+  overflow-x: hidden !important;
+}
+
+@font-face {
+  font-family: main-font;
+  src: url(Fonts/Lato/Lato-Regular.ttf);
+}
+
+%buttons {
+  color: $--white;
+  background-color: $--button-bg;
+  text-align: center;
+  padding: 14px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+header {
+  padding: 30px 0px;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100vw;
+
+  .header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    max-width: 85vw;
+    margin: auto;
+
+    .responsive-icon {
+      display: none;
+    }
+
+    div {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      .check-ticket__button {
+        margin-left: auto;
+        @extend %buttons;
+
+        + select {
+          @extend %buttons;
+          padding: 10px;
+        }
+
+        &::before {
+          content: "";
+          background-color: $--button-bg;
+          position: absolute;
+          inset: 0;
+          transform: scale(0, 1);
+          transform-origin: center;
+          transition: all 1s;
+          z-index: -1;
+          border-radius: 5px;
+        }
+
+        &:hover {
+          animation: opacity 1s;
+        }
+
+        &:hover::before {
+          transform: scale(1, 1);
+        }
+      }
+
+      .check-ticket__button + .burger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        cursor: pointer;
+        span {
+          background-color: $--button-bg;
+          border-radius: 5px;
+          height: 5px;
+          width: 25px;
+        }
+      }
+
+      .burger-menu-list {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 999999999;
+        background-color: $--white;
+        padding: 50px 20px;
+
+        .check-ticket__button {
+          display: none;
+        }
+
+        .closeBtn {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          font-size: 30px;
+          cursor: pointer;
+        }
+
+        #lang {
+          @extend %buttons;
+        }
+
+        .userPfp {
+          @extend %buttons;
+          display: inline-block;
+          height: fit-content;
+          position: relative;
+          display: flex;
+          gap: 20px;
+          padding: 10px 20px;
+          align-items: center;
+          align-self: stretch;
+
+          img {
+            background-color: $--white;
+            border: 2px solid black;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+          }
+        }
+
+        .chatBot {
+          @extend %buttons;
+          align-self: stretch;
+        }
+
+        .chatBot + a {
+          @extend %buttons;
+        }
+
+        .dark-btn {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          gap: 20px;
+          @extend %buttons;
+
+          img {
+            width: 20px;
+          }
+        }
+
+        .logOut {
+          display: flex;
+          gap: 20px;
+          padding: 10px 30px;
+          min-width: fit-content;
+          margin-top: auto;
+          @extend %buttons;
+
+          p {
+            min-width: fit-content;
+          }
+        }
+      }
+
+      .burger-menu-list.active {
+        display: flex;
+      }
+    }
+  }
+}
+
+footer {
+  margin-top: 100px;
+  padding: 130px 0px 30px 0px;
+  background-color: #f5f6fa;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  #logOut {
+    background-color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+
+    &:hover {
+      &::after {
+        display: block;
+      }
+    }
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    &::after {
+      content: attr(name);
+      display: none;
+      background-color: #3f3f3f;
+      padding: 10px;
+      color: #fff;
+      position: absolute;
+      top: -50px;
+      left: 0px;
+    }
+  }
+
+  .footer-txt-div {
+    max-width: 85vw;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      user-select: none;
+    }
+
+    &::before {
+      content: "";
+      width: 100%;
+      border-bottom: 2px solid #ebebeb;
+    }
+    a {
+      color: #4531f5;
+    }
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .header-info {
+    img.desktop-icon {
+      display: none;
+    }
+
+    img.responsive-icon {
+      display: block;
+      max-width: 60px;
+    }
+  }
+}
+
+@media screen and (max-width: 710px) {
+  .icons + div > .check-ticket__button {
+    display: none;
+  }
+
+  header .header-info div .burger-menu-list .check-ticket__button {
+    display: flex;
+  }
+}
+
+// DARK THEME
+
+body.dark-theme {
+  background-color: #121827 !important;
+  color: #e0e0e0 !important;
+  font-family: main-font !important;
+
+  header {
+    background-color: transparent !important;
+
+    .header-info {
+      max-width: 85vw;
+      margin: auto;
+
+      div {
+        .check-ticket__button {
+          background-color: #3b51e0 !important;
+          color: #ffffff !important;
+          border: none !important;
+
+          &::before {
+            background-color: #3b51e0 !important;
+          }
+
+          &:hover::before {
+            background-color: #5368f4 !important;
+          }
+        }
+
+        .burger-btn {
+          span {
+            background-color: #3b51e0 !important;
+          }
+        }
+
+        .burger-menu-list {
+          background-color: #1b1f37 !important;
+          padding: 50px 20px !important;
+          box-shadow: 0 0 20px #2841bf99 !important;
+          color: #e0e0e0 !important;
+
+          .check-ticket__button,
+          #lang,
+          .userPfp,
+          .chatBot,
+          .chatBot + a,
+          .logOut {
+            background-color: #3b51e0 !important;
+            color: #ffffff !important;
+            border: none !important;
+          }
+
+          .userPfp {
+            img {
+              background-color: #121827 !important;
+              border: 2px solid #5368f4 !important;
+            }
+          }
+
+          .closeBtn {
+            color: #e0e0e0 !important;
+          }
+        }
+      }
+    }
+  }
+
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #007bff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+  }
+
+  .loader-wrapper {
+    background-color: rgba(0, 0, 0, 0.34);
+    display: none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  footer {
+    background-color: #1b1f37 !important;
+    color: #e0e0e0 !important;
+    margin-top: 100px !important;
+    padding: 130px 0 30px 0 !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+
+    #logOut {
+      background-color: #28304f !important;
+      box-shadow: 0 5px 15px rgba(41, 54, 82, 0.75) !important;
+      color: #e0e0e0 !important;
+
+      &:hover::after {
+        background-color: #5368f4 !important;
+        color: #fff !important;
+      }
+
+      img {
+        filter: brightness(0) invert(1) !important;
+      }
+    }
+
+    .footer-txt-div {
+      max-width: 85vw !important;
+      padding: 10px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 20px !important;
+
+      p {
+        user-select: none !important;
+        color: #c0c0c0 !important;
+      }
+
+      &::before {
+        border-bottom: 2px solid #2c2f47 !important;
+      }
+
+      a {
+        color: #3b51e0 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+body {
+  font-family: sans-serif;
+  background-color: #f2f2f2;
+}
+
+.wrapper {
+  height: 59vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.chat-container {
+  margin-top: 200px;
+  width: 700px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  overflow: hidden;
+}
+
+.question-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-box {
+  flex: 2;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.message {
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.user {
+  background-color: #e0f7fa;
+  align-self: flex-end;
+}
+
+.bot {
+  background-color: #eeeeee;
+  align-self: flex-start;
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.question-buttons button,
+.extra-questions button,
+#toggleMoreBtn,
+#clearChatBtn {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-container button {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.extra-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Dark Theme */
+
+body.dark-theme {
+  background-color: #121212;
+  color: #f2f2f2;
+}
+
+body.dark-theme .chat-container {
+  background-color: #1e1e1e;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme .chat-box {
+  border: 1px solid #333;
+  background-color: #2a2a2a;
+}
+
+body.dark-theme .message.user {
+  background-color: #2841bf;
+  color: white;
+}
+
+body.dark-theme .message.bot {
+  background-color: #444;
+  color: white;
+}
+
+body.dark-theme .loader {
+  border: 3px solid #666;
+  border-top: 3px solid #f2f2f2;
+}
+
+body.dark-theme .question-buttons button,
+body.dark-theme .extra-questions button,
+body.dark-theme #toggleMoreBtn,
+body.dark-theme #clearChatBtn {
+  background-color: #2841bf;
+  color: white;
+}
+
+body.dark-theme .input-container input {
+  background-color: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+body.dark-theme .input-container button {
+  background-color: #2841bf;
+  color: white;
+}

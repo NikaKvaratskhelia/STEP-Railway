@@ -1,0 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  padding: 20px;
+  text-align: center;
+}
+
+main{
+    margin-top: 150px;
+}
+#alertDiv {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  background-color: green;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: bottom 0.5s ease, opacity 0.5s ease;
+  z-index: 999;
+}
+h1 {
+  margin-bottom: 10px;
+}
+.bingo-board {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+}
+.bingo-cell {
+  background-color: #fff;
+  border: 2px solid #007bff;
+  padding: 12px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.bingo-cell.marked {
+  background-color: #28a745;
+  color: #fff;
+  text-decoration: line-through;
+}
+.bingo-cell.locked {
+  background-color: #ccc;
+  color: #666;
+  pointer-events: none;
+}
+#reward {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #d63384;
+  font-weight: bold;
+  display: none;
+}
+
+body.dark-theme {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-theme main {
+  margin-top: 150px;
+}
+
+body.dark-theme #alertDiv {
+  background-color: #00796b; 
+  color: #e0f2f1;
+  box-shadow: 0 4px 12px rgba(0, 77, 64, 0.7);
+}
+
+body.dark-theme .bingo-board {
+  max-width: 600px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 0 15px #222;
+}
+
+body.dark-theme .bingo-cell {
+  background-color: #2c2c2c;
+  border: 2px solid #3399ff;
+  color: #ddd;
+  padding: 12px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme .bingo-cell.marked {
+  background-color: #2e7d32; 
+  color: #c8facc;
+  text-decoration: line-through;
+  border-color: #1b5e20;
+  font-weight: bold;
+}
+
+body.dark-theme .bingo-cell.locked {
+  background-color: #444;
+  color: #888;
+  pointer-events: none;
+  border-color: #555;
+  cursor: default;
+}
+
+body.dark-theme #reward {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #e91e63;
+  font-weight: bold;
+  display: none;
+}

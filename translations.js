@@ -240,6 +240,10 @@ const translations = {
     en: "Surname:",
   },
 
+  "მიმდინარეობს ბილეთის გენერაცია...":{
+    en:"Generating Your Ticket..."
+  },
+
   გვარი:{
     en:"Surname"
   },

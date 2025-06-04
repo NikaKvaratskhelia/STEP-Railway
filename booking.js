@@ -334,11 +334,14 @@ registrateTicket.addEventListener("click", function () {
       phoneNumbers[0].value.trim().replace(/[-\s]+/g, " ")
     );
 
-    registrateTicketFunction();
+    const loader = document.getElementById("loader");
 
-    setTimeout(() => {
-      window.location.href = "payment.html";
-    }, 2000);
+    loader.classList.remove("hidden");
+
+    registrateTicketFunction().then(() => {
+      loader.classList.add("hidden");
+      window.location.href = "payment.html"
+    });
   }
 });
 
@@ -392,6 +395,7 @@ async function registrateTicketFunction() {
     const data = await res.text();
     console.log(data);
     sessionStorage.setItem("ticket-id", data);
+    sessionStorage.setItem("ticket", JSON.stringify(newTicket));
     const mockUserId = sessionStorage.getItem("mockUserId");
 
     await fetch(
@@ -409,6 +413,4 @@ async function registrateTicketFunction() {
   } catch (err) {
     console.error("Error registering ticket or sending notification:", err);
   }
-
-  sessionStorage.setItem("ticket", JSON.stringify(newTicket));
 }

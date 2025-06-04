@@ -1,0 +1,282 @@
+$--text: #3f3f3f;
+$--button-bg: #2841bf;
+$--button-bg__trans: #2841bf00;
+$--linear-one: #d5e4f5;
+$--linear-two: #ffffff;
+$--white: #ffffff;
+$--second-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: main-font;
+}
+
+@font-face {
+  font-family: main-font;
+  src: url(Fonts/Lato/Lato-Regular.ttf);
+}
+
+@keyframes opacity {
+  0% {
+    background-color: $--button-bg;
+  }
+
+  100% {
+    background-color: $--button-bg__trans;
+  }
+}
+
+%buttons {
+  color: $--white;
+  background-color: $--button-bg;
+  text-align: center;
+  padding: 14px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    background-color: $--button-bg;
+    position: absolute;
+    inset: 0;
+    transform: scale(0, 1);
+    transform-origin: center;
+    transition: all 1s;
+    z-index: -1;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    animation: opacity 1s;
+  }
+
+  &:hover::before {
+    transform: scale(1, 1);
+  }
+}
+
+header {
+  background-color: $--white;
+}
+
+.name-div {
+  padding: 150px 100px 150px;
+  background-color: $--button-bg;
+
+  p {
+    width: fit-content;
+    font-size: 40px;
+    font-weight: 600;
+    color: $--white;
+  }
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: #f2f4fa;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 1100px;
+  margin: auto;
+  margin-top: 50px;
+
+  input {
+    padding: 10px;
+    border: 1px solid #d5daf0;
+    border-radius: 3px;
+    background-color: #fafaff;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+    &:nth-child(3) {
+      flex-direction: row;
+
+      div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  button {
+    align-self: center;
+    @extend %buttons;
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 543px) {
+  .name-div {
+    padding: 250px 0px 100px;
+    p {
+      margin: auto;
+      font-size: 30px;
+    }
+  }
+}
+
+// Dark Theme
+
+body.dark-theme {
+  $--text: #c7c7c7;
+  $--button-bg: #1a2a7c;
+  $--button-bg__trans: #1a2a7c00;
+  $--linear-one: #2a3b7a;
+  $--linear-two: #121426;
+  $--white: #e6e6e6;
+  $--second-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI";
+
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: main-font;
+    color: $--text;
+  }
+
+  @font-face {
+    font-family: main-font;
+    src: url(Fonts/Lato/Lato-Regular.ttf);
+  }
+
+  @keyframes opacity {
+    0% {
+      background-color: $--button-bg;
+    }
+    100% {
+      background-color: $--button-bg__trans;
+    }
+  }
+
+  %buttons {
+    color: $--white;
+    background-color: $--button-bg;
+    text-align: center;
+    padding: 14px 30px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      background-color: $--button-bg;
+      position: absolute;
+      inset: 0;
+      transform: scale(0, 1);
+      transform-origin: center;
+      transition: all 1s;
+      z-index: -1;
+      border-radius: 5px;
+    }
+
+    &:hover {
+      animation: opacity 1s;
+    }
+
+    &:hover::before {
+      transform: scale(1, 1);
+    }
+  }
+
+  header {
+    background-color: $--linear-two;
+  }
+
+  .name-div {
+    padding: 150px 100px 150px;
+    background-color: $--button-bg;
+
+    p {
+      width: fit-content;
+      font-size: 40px;
+      font-weight: 600;
+      color: $--white;
+    }
+  }
+
+  .payment-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #1e2235;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 50px;
+
+    input {
+      padding: 10px;
+      border: 1px solid #3a3f5c;
+      border-radius: 3px;
+      background-color: #2b2f46;
+      color: $--white;
+
+      &::placeholder {
+        color: #a0a0a0;
+      }
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+
+      &:nth-child(3) {
+        flex-direction: row;
+
+        div {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 10px;
+
+          input {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    button {
+      align-self: center;
+      @extend %buttons;
+      padding: 10px 15px;
+    }
+  }
+}

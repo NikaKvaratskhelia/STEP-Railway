@@ -104,9 +104,12 @@ function loadReviews() {
     .then((data) => {
       let div = "";
       data.forEach((review) => {
+        const IsthisUser = review.id === mockUserId;
         const rating = review.rating || 0;
         const starsDisplay = "★".repeat(rating) + "☆".repeat(5 - rating);
-        div += `<div class="review" data-id="${review.id}">
+        div += `<div class="review" data-id="${review.id}" user-id="${
+          review.id
+        }">
   <img src="${review.avatar}" alt="User" />
   <div class="name">${review.firstName} ${review.lastName}</div>
   <div class="text">${review.comment}</div>
@@ -114,6 +117,11 @@ function loadReviews() {
   ${
     admin
       ? `<button class="delete-btn" onclick="deleteReview('${review.commentId}')">Delete</button>`
+      : ""
+  }
+  ${
+    IsthisUser
+      ? `<button onclick="deleteReview('${review.commentId}')" class="delete-btn">Delete</button>`
       : ""
   }
 </div>`;
